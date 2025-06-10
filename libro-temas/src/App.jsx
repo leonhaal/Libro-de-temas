@@ -1,16 +1,16 @@
-
-import React from "react";
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import FormularioNombreApellido from "./components/FormularioNombreApellido";
+import PantallaDestino from "./components/PantallaDestino";
 
 function App() {
-  return (
-  <div>
-    <h1>Formulario Nombre y Apellido como componente</h1>
-    <FormularioNombreApellido/>
-  
-  </div>
-  );
+    return (
+        <Router>
+            <Routes>
+                <Route path="/" element={<FormularioNombreApellido titulo="Formulario Nombre y Apellido" />} />
+                <Route path="/resultado" element={<PantallaDestino />} />
+            </Routes>
+        </Router>
+    );
 }
 
 export default App;
